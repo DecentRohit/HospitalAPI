@@ -1,5 +1,8 @@
 # HospitalAPI
 API for the doctors of a Hospital which has been allocated by the govt for testing and quarantine + well being of  COVID-19 patients
+
+**********HOSPITAL API***********
+
 THIS IS A VERY SIMPLE FUNCTIONING API FOR A HOSPITAL(SERVER SIDE ONLY)
 
 IT IS DESIGNED FOR THE DOCTORS OF A HOSPITAL WHICH HAS BEEN ALLOCATED BY THE GOVT. FOR TESTING, QUARANTINE AND WELL BEING OF COVID-19 PATIENTS
@@ -20,7 +23,7 @@ PATIENT REPORT HAVE THE FOLLOWING FIELDS:-
 BELOW ARE THE EXAMPLES FOR USING API :
 
 *REGISTER NEW DOCTOR:
-GO TO http://localhost:3200/api/users/doctors/register
+GO TO http://localhost:3200/api/users/doctors/register (POST request)
 ADD NAME, EMAIL, PASSWORD, TYPE AS BELOW IN BODY>RAW>JSON 
 {
     
@@ -33,6 +36,8 @@ ADD NAME, EMAIL, PASSWORD, TYPE AS BELOW IN BODY>RAW>JSON
 
 
 *LOGIN DOCTOR : (RETURNS JWT TOKEN TO USE FOR FURTHER PROCEEDINGS)
+GO TO http://localhost:3200/api/users/doctors/login (POST request)
+ADD EMAIL AND PASSWORD AS BELOW IN BODY>RAW>JSON 
 {
 "email" : "Rohit@r.com" ,
 "password" : "iamrohit@13R" 
@@ -40,17 +45,17 @@ ADD NAME, EMAIL, PASSWORD, TYPE AS BELOW IN BODY>RAW>JSON
 
 
 *REGISTER PATIENT:(ONLY DONE BY DOCTOR, SO LOGIN AS DOCTOR FIRST AND USE JWT TOKEN IN AUTHORIZATION HEADER )
-GO TO http://localhost:3200/api/users/patients/register
+GO TO http://localhost:3200/api/users/patients/register (POST request)
 ADD NAME, AND PHONE AS BELOW IN BODY>RAW>JSON 
 {
     
 "name" : "Rohit" ,
-"Phone" : 1800180022
+"phone" : 1800180022
 }
 
 
 * CREATE PATIENT REPORT
-GO TO http://localhost:3200/api/users/reports/<STATUS>
+GO TO http://localhost:3200/api/users/reports/<STATUS> (GET request)
 ADD STATUS AS BELOW IN BODY>RAW>JSON 
 EXAMPLES:
 {
@@ -59,13 +64,6 @@ EXAMPLES:
 
 
 * GET ALL REPORT OF A PARTICULAR PATIENT
-GO TO http://localhost:3200/api/users/patients/<PATIENT-ID>/all_reports
+GO TO http://localhost:3200/api/users/patients/<PATIENT-ID>/all_reports (GET request)
 ADD AS BELOW IN BODY>RAW>JSON
-
-
-
-
-
-
-
 
